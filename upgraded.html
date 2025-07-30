@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safar Miles - Best Travel Packages | Tours & Activities | Kolkata</title>
+    <meta name="description" content="Safar Miles - Book best travel packages, tours & activities. 15+ years experience, 152+ destinations. Air tickets, visa, hotels, honeymoon tours. Call 8910167104">
+    <meta name="keywords" content="travel packages, tours, activities, air tickets, visa services, hotel booking, honeymoon tours, safar miles kolkata">
+    <meta name="author" content="Safar Miles">
+    <meta name="robots" content="index, follow">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Safar Miles",
+        "description": "Best travel packages and tours with 15+ years experience",
+        "url": "https://safarmiles.in",
+        "logo": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAFARMILES%20LOGO.jpg-VFqiZ1dXqaI63fY3fsVm6n1UhDfw7j.jpeg",
+        "telephone": "+91-8910167104",
+        "email": "anish@safarmiles.in",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Gr-Fr, Db 40 & 41, Shastri Bagan, Deshbandu Nagar",
+            "addressLocality": "Kolkata",
+            "postalCode": "700059",
+            "addressCountry": "IN"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FF6B35;
+        }
+        
+        .search-bar {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 40px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .currency-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .login-btn {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            background: #f5f5f5;
+        }
+        
+        .contact-btn {
+            background: #FF6B35;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+        
+        /* Navigation */
+        .nav-section {
+            padding: 20px 0;
+        }
+        
+        .nav-categories {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #666;
+            min-width: 80px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-item:hover {
+            color: #FF6B35;
+        }
+        
+        .nav-item.active {
+            color: #FF6B35;
+        }
+        
+        .nav-icon {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .nav-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: center;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: #FF6B35;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        .nav-right {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .toggle-btn {
+            padding: 12px 24px;
+            border: 2px solid #e0e0e0;
+            background: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn.active {
+            background: #FF6B35;
+            color: white;
+            border-color: #FF6B35;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .view-all {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #FF6B35;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .view-all:hover {
+            background: rgba(255, 107, 53, 0.1);
+        }
+        
+        /* Package Cards */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-duration {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        
+        .card-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .rating-stars {
+            color: #FFD700;
+            font-size: 14px;
+        }
+        
+        .rating-score {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .rating-count {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+        
+        .card-locations {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .location-tag {
+            background: #f5f5f5;
+            color: #666;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .card-pricing {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .price-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .original-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 14px;
+        }
+        
+        .current-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .price-per {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .discount-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .callback-btn {
+            width: 100%;
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .callback-btn:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 2000;
+            transition: right 0.3s ease;
+            padding: 20px;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-nav.active {
+            right: 0;
+        }
+        
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .mobile-nav-items {
+            list-style: none;
+        }
+        
+        .mobile-nav-items li {
+            margin-bottom: 20px;
+        }
+        
+        .mobile-nav-items a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            display: block;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1500;
+        }
+        
+        .mobile-overlay.active {
+            display: block;
+        }
+        
+        /* Lead Form Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .modal-subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: #FF6B35;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: #e55a2b;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #f8f9fa;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+        
+        .footer-section a:hover {
+            color: #FF6B35;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                order: 3;
+                flex: 1;
+                max-width: 100%;
+                margin: 15px 0 0 0;
+            }
+            
+            .header-right {
+                gap: 10px;
+            }
+            
+            .currency-selector,
+            .login-btn {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-categories {
+                gap: 20px;
+                justify-content: flex-start;
+            }
+            
+            .nav-item {
+                min-width: 60px;
+            }
+            
+            .nav-icon {
+                font-size: 1.5rem;
+            }
+            
+            .nav-label {
+                font-size: 12px;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .modal-content {
+                padding: 20px;
+                margin: 20px;
+            }
+            
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .nav-categories {
+                gap: 15px;
+            }
+            
+            .card-content {
+                padding: 15px;
+            }
+            
+            .current-price {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-content">
+                    <a href="#" class="logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAFARMILES%20LOGO.jpg-VFqiZ1dXqaI63fY3fsVm6n1UhDfw7j.jpeg" alt="Safar Miles Logo">
+                        <span class="logo-text">safarmiles</span>
+                    </a>
+                    
+                    <div class="search-bar">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" placeholder="Search for Dubai">
+                    </div>
+                    
+                    <div class="header-right">
+                        <div class="currency-selector">
+                            <span>🇮🇳</span>
+                            <span>INR ₹</span>
+                            <span>▼</span>
+                        </div>
+                        <a href="#" class="login-btn">Login</a>
+                        <a href="tel:+918910167104" class="contact-btn">📞 Call Now</a>
+                        <button class="mobile-menu-btn" onclick="toggleMobileNav()">☰</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-section">
+            <div class="container">
+                <div class="nav-categories">
+                    <a href="#" class="nav-item active">
+                        <div class="nav-icon">🔍</div>
+                        <div class="nav-label">Explore</div>
+                    </a>
+                    <a href="#europe" class="nav-item">
+                        <div class="nav-icon">🏰</div>
+                        <div class="nav-label">Europe</div>
+                    </a>
+                    <a href="#maldives" class="nav-item">
+                        <div class="nav-icon">🏝️</div>
+                        <div class="nav-label">Maldives</div>
+                        <span class="popular-badge">POPULAR</span>
+                    </a>
+                    <a href="#ladakh" class="nav-item">
+                        <div class="nav-icon">🏔️</div>
+                        <div class="nav-label">Ladakh</div>
+                        <span class="popular-badge">TRENDING</span>
+                    </a>
+                    <a href="#singapore" class="nav-item">
+                        <div class="nav-icon">🏙️</div>
+                        <div class="nav-label">Singapore</div>
+                    </a>
+                    <a href="#usa" class="nav-item">
+                        <div class="nav-icon">🗽</div>
+                        <div class="nav-label">USA</div>
+                    </a>
+                    <a href="#thailand" class="nav-item">
+                        <div class="nav-icon">🛕</div>
+                        <div class="nav-label">Thailand</div>
+                    </a>
+                    <a href="#bali" class="nav-item">
+                        <div class="nav-icon">🌺</div>
+                        <div class="nav-label">Bali</div>
+                        <span class="popular-badge">HOT</span>
+                    </a>
+                    
+                    <div class="nav-right">
+                        <button class="toggle-btn active">Tours</button>
+                        <button class="toggle-btn">Activities</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SAFARMILES%20LOGO.jpg-VFqiZ1dXqaI63fY3fsVm6n1UhDfw7j.jpeg" alt="Safar Miles" style="height: 30px;">
+            <button class="close-btn" onclick="closeMobileNav()">✕</button>
+        </div>
+        <ul class="mobile-nav-items">
+            <li><a href="#europe">Europe Tours</a></li>
+            <li><a href="#maldives">Maldives Packages</a></li>
+            <li><a href="#ladakh">Ladakh Adventures</a></li>
+            <li><a href="#singapore">Singapore Tours</a></li>
+            <li><a href="#usa">USA Packages</a></li>
+            <li><a href="#thailand">Thailand Tours</a></li>
+            <li><a href="#bali">Bali Packages</a></li>
+            <li><a href="tel:+918910167104">📞 8910167104</a></li>
+            <li><a href="mailto:anish@safarmiles.in">✉️ Email Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Europe Section -->
+            <section class="section" id="europe">
+                <div class="section-header">
+                    <h2 class="section-title">Europe</h2>
+                    <a href="#" class="view-all">
+                        View All
+                        <span>→</span>
+                    </a>
+                </div>
+                
+                <div class="packages-grid">
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Switzerland Alps">
+                            <div class="card-badge">9 days & 8 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-score">4.9</span>
+                                <span class="rating-count">(523)</span>
+                            </div>
+                            <h3 class="card-title">Best Of Switzerland & Italy | Romania Streets To Snowy Alps</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Rome</span>
+                                <span class="location-tag">1D Florence</span>
+                                <span class="location-tag">2D Venice</span>
+                                <span class="location-tag">4D Zurich</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹3,030</div>
+                                    <div class="current-price">₹1,639 <span class="price-per">/Adult</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹1391</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Scandinavian Snow">
+                            <div class="card-badge">9 days & 8 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-score">4.8</span>
+                                <span class="rating-count">(240)</span>
+                            </div>
+                            <h3 class="card-title">Scandinavian Snow Escape | Northern Nights & Winter Lights</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Copenhagen</span>
+                                <span class="location-tag">1D Oslo</span>
+                                <span class="location-tag">1D Oslo</span>
+                                <span class="location-tag">3D Stockholm</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹4,431</div>
+                                    <div class="current-price">₹3,331 <span class="price-per">/Adult</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹1100</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Europe Golden Trio">
+                            <div class="card-badge">8 days & 7 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">4.5</span>
+                                <span class="rating-count">(32)</span>
+                            </div>
+                            <h3 class="card-title">Europe Golden Trio | Switzerland, Amsterdam & Paris Tour</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Amsterdam</span>
+                                <span class="location-tag">2D Paris</span>
+                                <span class="location-tag">3D Lucerne</span>
+                                <span class="location-tag">1D Zurich</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹2,574</div>
+                                    <div class="current-price">₹1,980 <span class="price-per">/Adult</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹594</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Maldives Section -->
+            <section class="section" id="maldives">
+                <div class="section-header">
+                    <h2 class="section-title">Maldives</h2>
+                    <a href="#" class="view-all">
+                        View All
+                        <span>→</span>
+                    </a>
+                </div>
+                
+                <div class="packages-grid">
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Maldives Paradise">
+                            <div class="card-badge">5 days & 4 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">4.9</span>
+                                <span class="rating-count">(856)</span>
+                            </div>
+                            <h3 class="card-title">Maldives Paradise | Overwater Villa & Seaplane Experience</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Male</span>
+                                <span class="location-tag">3D Resort Island</span>
+                                <span class="location-tag">Seaplane Transfer</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹1,25,000</div>
+                                    <div class="current-price">₹89,999 <span class="price-per">/Couple</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹35,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Maldives Luxury">
+                            <div class="card-badge">6 days & 5 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">4.8</span>
+                                <span class="rating-count">(642)</span>
+                            </div>
+                            <h3 class="card-title">Maldives Luxury Escape | Beach Villa & Water Sports</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">1D Male</span>
+                                <span class="location-tag">4D Beach Villa</span>
+                                <span class="location-tag">Water Sports</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹1,15,000</div>
+                                    <div class="current-price">₹79,999 <span class="price-per">/Couple</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹35,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Maldives Honeymoon">
+                            <div class="card-badge">7 days & 6 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">4.9</span>
+                                <span class="rating-count">(423)</span>
+                            </div>
+                            <h3 class="card-title">Maldives Honeymoon Special | Romantic Dinners & Spa</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">1D Male</span>
+                                <span class="location-tag">5D Resort</span>
+                                <span class="location-tag">Couple Spa</span>
+                                <span class="location-tag">Romantic Dinner</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹1,35,000</div>
+                                    <div class="current-price">₹99,999 <span class="price-per">/Couple</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹35,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Other Destinations -->
+            <section class="section" id="ladakh">
+                <div class="section-header">
+                    <h2 class="section-title">Ladakh Adventures</h2>
+                    <a href="#" class="view-all">
+                        View All
+                        <span>→</span>
+                    </a>
+                </div>
+                
+                <div class="packages-grid">
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Ladakh Adventure">
+                            <div class="card-badge">6 days & 5 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-score">4.7</span>
+                                <span class="rating-count">(298)</span>
+                            </div>
+                            <h3 class="card-title">Ladakh Adventure | Leh Palace & Pangong Lake</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Leh</span>
+                                <span class="location-tag">1D Nubra Valley</span>
+                                <span class="location-tag">2D Pangong</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹35,000</div>
+                                    <div class="current-price">₹24,999 <span class="price-per">/Person</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹10,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Singapore Tour">
+                            <div class="card-badge">4 days & 3 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★★</span>
+                                <span class="rating-score">4.8</span>
+                                <span class="rating-count">(567)</span>
+                            </div>
+                            <h3 class="card-title">Singapore Highlights | Marina Bay & Universal Studios</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">Marina Bay</span>
+                                <span class="location-tag">Sentosa Island</span>
+                                <span class="location-tag">Universal Studios</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹55,000</div>
+                                    <div class="current-price">₹39,999 <span class="price-per">/Person</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹15,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="package-card" onclick="openModal()">
+                        <div class="card-image">
+                            <img src="/placeholder.svg?height=220&width=350" alt="Bali Cultural">
+                            <div class="card-badge">5 days & 4 nights</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-rating">
+                                <span class="rating-stars">★★★★☆</span>
+                                <span class="rating-score">4.6</span>
+                                <span class="rating-count">(389)</span>
+                            </div>
+                            <h3 class="card-title">Bali Cultural Journey | Temples & Rice Terraces</h3>
+                            <div class="card-locations">
+                                <span class="location-tag">2D Ubud</span>
+                                <span class="location-tag">2D Seminyak</span>
+                                <span class="location-tag">Temple Tours</span>
+                            </div>
+                            <div class="card-pricing">
+                                <div class="price-section">
+                                    <div class="original-price">₹65,000</div>
+                                    <div class="current-price">₹45,999 <span class="price-per">/Person</span></div>
+                                </div>
+                                <div class="discount-badge">SAVE ₹19,001</div>
+                            </div>
+                            <button class="callback-btn">
+                                📞 Request Callback
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Lead Form Modal -->
+    <div class="modal" id="leadModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Get Best Travel Quote</h2>
+                <p class="modal-subtitle">Fill the form and get personalized travel deals within 30 minutes!</p>
+            </div>
+            
+            <form id="leadForm" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" class="form-input" name="name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" class="form-input" name="phone" required placeholder="Enter your phone number">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input type="email" class="form-input" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Destination *</label>
+                    <select class="form-select" name="destination" required>
+                        <option value="">Select Destination</option>
+                        <option value="europe">Europe</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="ladakh">Ladakh</option>
+                        <option value="singapore">Singapore</option>
+                        <option value="usa">USA</option>
+                        <option value="thailand">Thailand</option>
+                        <option value="bali">Bali</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Travel Date</label>
+                    <input type="date" class="form-input" name="travel-date">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Number of Travelers</label>
+                    <select class="form-select" name="travelers">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3-5">3-5 People</option>
+                        <option value="6+">6+ People</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Special Requirements</label>
+                    <textarea class="form-textarea" name="message" placeholder="Tell us about your travel preferences..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    Get My Travel Quote
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Safar Miles</h3>
+                    <p>Your trusted travel partner with 15+ years of experience in creating unforgettable journeys across 152+ destinations worldwide.</p>
+                    <p><strong>Phone:</strong> <a href="tel:+918910167104">8910167104</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:anish@safarmiles.in">anish@safarmiles.in</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Destinations</h3>
+                    <p><a href="#europe">Europe Tours</a></p>
+                    <p><a href="#maldives">Maldives Packages</a></p>
+                    <p><a href="#ladakh">Ladakh Adventures</a></p>
+                    <p><a href="#singapore">Singapore Tours</a></p>
+                    <p><a href="#usa">USA Packages</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <p>Flight Booking</p>
+                    <p>Visa Services</p>
+                    <p>Hotel Booking</p>
+                    <p>Honeymoon Packages</p>
+                    <p>Corporate Travel</p>
+                    <p>Custom Tours</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><strong>Address:</strong></p>
+                    <p>Gr-Fr, Db 40 & 41,<br>Shastri Bagan, Deshbandu Nagar,<br>Kolkata - 700059</p>
+                    <p><strong>Working Hours:</strong></p>
+                    <p>Mon-Sat: 9:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Safar Miles. All rights reserved. | Best Travel Agency in Kolkata</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/918910167104?text=Hi%20Safar%20Miles,%20I%20need%20help%20with%20travel%20booking" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        💬
+    </a>
+
+    <script>
+        // Mobile Navigation
+        function toggleMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('mobileOverlay');
+            nav.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileNav() {
+            const nav = document.getElementById('mobileNav');
+            const overlay = document.getElementById('mobileOverlay');
+            nav.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Modal Functions
+        function openModal() {
+            const modal = document.getElementById('leadModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('leadModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('leadModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Form Submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            alert('Thank you for your inquiry! Our travel expert will contact you within 30 minutes with the best quote for your dream trip.');
+            
+            // Reset form and close modal
+            event.target.reset();
+            closeModal();
+            
+            console.log('Form data:', data);
+        }
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Search functionality
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.toLowerCase();
+                // Simple search - scroll to matching section
+                if (searchTerm.includes('europe')) {
+                    document.getElementById('europe').scrollIntoView({ behavior: 'smooth' });
+                } else if (searchTerm.includes('maldives')) {
+                    document.getElementById('maldives').scrollIntoView({ behavior: 'smooth' });
+                } else if (searchTerm.includes('ladakh')) {
+                    document.getElementById('ladakh').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    openModal();
+                }
+            }
+        });
+
+        // Toggle buttons functionality
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Navigation items functionality
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for active navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item[href^="#"]');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${id}`) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.package-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Phone and email click tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Phone call initiated');
+            });
+        });
+
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                console.log('Email initiated');
+            });
+        });
+    </script>
+</body>
+</html>
