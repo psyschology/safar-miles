@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Patni Asset Management</title>
+    <meta
+      name="description"
+      content="Patni Asset Management — Insight-driven investment management, wealth advisory, and responsible investing. Your roadmap to long-term success."
+    />
+    <meta name="theme-color" content="#ff5000" />
+    <style>
+      :root{
+        --bg:#ffffff;
+        --bg-soft:#f4f4f8;
+        --text:#131217;
+        --muted:#5b6066;
+        --border:#e7e8ea;
+        --accent:#ff5000;
+        --accent-ink:#ffffff;
+        --card:#ffffff;
+        --radius:14px;
+        --max:1200px;
+        --shadow:0 10px 30px rgba(0,0,0,.05);
+      }
+
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#0c0c0e;
+          --bg-soft:#111115;
+          --text:#f4f5f7;
+          --muted:#b7bac0;
+          --border:#23242a;
+          --card:#121217;
+          --shadow:0 10px 30px rgba(0,0,0,.35);
+        }
+      }
+
+      *{box-sizing:border-box}
+      html:focus-within{scroll-behavior:smooth}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+        color:var(--text);
+        background:var(--bg-soft);
+        line-height:1.6;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+      }
+      a{color:inherit;text-decoration:none}
+      img{max-width:100%;height:auto;display:block}
+      svg{display:block}
+
+      /* Layout */
+      .container{max-width:var(--max);margin-inline:auto;padding:0 20px}
+      .section{padding: clamp(48px, 5vw, 96px) 0}
+      .grid{
+        display:grid;
+        gap: clamp(16px, 2vw, 24px);
+      }
+
+      /* Topbar */
+      .topbar{
+        background:var(--bg);
+        border-bottom:1px solid var(--border);
+        font-size:14px;
+      }
+      .topbar .wrap{
+        display:flex;align-items:center;justify-content:space-between;gap:16px;
+        padding:8px 0;
+      }
+      .muted{color:var(--muted)}
+      .topbar a{color:var(--text)}
+      .tag{font-weight:600;color:var(--text)}
+      .topbar .links{display:flex;gap:16px;flex-wrap:wrap}
+      .topbar .links a:hover{color:var(--accent)}
+
+      /* Header / Nav */
+      .header{
+        position:sticky;top:0;z-index:50;
+        background:var(--bg);
+        border-bottom:1px solid var(--border);
+        backdrop-filter:saturate(180%) blur(8px);
+      }
+      .nav{
+        display:flex;align-items:center;justify-content:space-between;gap:16px;
+        padding:12px 0;
+      }
+      .brand{
+        display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;
+        font-size: clamp(18px, 2.2vw, 22px);
+      }
+      .logo{
+        width:36px;height:36px;border-radius:10px;background:conic-gradient(from 180deg, #ff7a00, var(--accent));
+        display:grid;place-items:center;color:#fff;font-weight:900;box-shadow: var(--shadow);
+      }
+      .navlinks{
+        display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+      }
+      .navlinks a{
+        padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:600;
+      }
+      .navlinks a:hover, .navlinks a:focus-visible{color:var(--text);background:var(--bg-soft)}
+      .btn{
+        display:inline-flex;align-items:center;gap:10px;
+        padding:10px 14px;border-radius:12px;font-weight:700;
+        background:var(--accent);color:var(--accent-ink);border:0;cursor:pointer;
+        box-shadow:0 6px 16px rgba(255,80,0,.3);
+      }
+      .btn.secondary{
+        background:transparent;border:1px solid var(--border);color:var(--text);box-shadow:none;
+      }
+      .hamburger{
+        display:none;background:transparent;border:1px solid var(--border);border-radius:10px;
+        padding:8px;line-height:0;cursor:pointer;color:var(--text);
+      }
+      .mobile-panel{
+        display:none;padding:10px 0;border-top:1px solid var(--border);
+      }
+      .mobile-panel a{display:block;padding:10px 8px;border-radius:10px;color:var(--muted)}
+      .mobile-panel a:hover{background:var(--bg-soft);color:var(--text)}
+      .dropdown{
+        position:relative;
+      }
+      .dropdown summary{
+        list-style:none;display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+        padding:10px 12px;border-radius:10px;color:var(--muted);font-weight:700;
+      }
+      .dropdown[open] summary, .dropdown summary:hover{background:var(--bg-soft);color:var(--text)}
+      .dropdown ul{
+        position:absolute;inset:auto 0 auto 0;min-width:240px;transform:translateY(10px);
+        background:var(--card);border:1px solid var(--border);border-radius:14px;padding:8px;
+        display:grid;gap:2px;box-shadow: var(--shadow);
+      }
+      .dropdown li a{display:block;padding:10px;border-radius:10px}
+      .dropdown li a:hover{background:var(--bg-soft)}
+      @media (max-width: 960px){
+        .navlinks, .nav .btn{display:none}
+        .hamburger{display:inline-flex}
+        .mobile-panel{display:block}
+        .dropdown ul{position:static;transform:none;border:0;box-shadow:none;padding:0;background:transparent}
+      }
+
+      /* Hero */
+      .hero{
+        background:
+          radial-gradient(1000px 300px at 10% -10%, rgba(255,80,0,.07), transparent 40%),
+          radial-gradient(800px 300px at 90% -20%, rgba(255,80,0,.08), transparent 40%);
+        padding: clamp(32px, 4vw, 48px) 0 0;
+      }
+      .hero .wrap{
+        display:grid;gap: clamp(20px, 3vw, 40px);
+        grid-template-columns: 1.2fr .8fr;
+        align-items:center;
+      }
+      @media (max-width: 960px){ .hero .wrap{grid-template-columns:1fr} }
+      .eyebrow{
+        display:inline-flex;align-items:center;gap:8px;
+        background:var(--bg);border:1px solid var(--border);color:var(--muted);
+        padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px;
+      }
+      .title{
+        font-weight:900;line-height:1.1;margin:10px 0 14px;
+        font-size: clamp(28px, 4.5vw, 50px);
+        letter-spacing:-.02em;
+      }
+      .lead{color:var(--muted);font-size: clamp(15px, 2.1vw, 18px)}
+      .hero-figure{
+        aspect-ratio: 16/10;border-radius:20px;
+        background:linear-gradient(135deg,#1b1c22, #2b2f39);
+        border:1px solid var(--border);overflow:hidden;position:relative;box-shadow: var(--shadow);
+      }
+      .hero-figure::after{
+        content:"";position:absolute;inset:0;
+        background:
+          radial-gradient(400px 200px at 20% 20%, rgba(255, 80, 0, .35), transparent 55%),
+          radial-gradient(400px 200px at 80% 80%, rgba(255, 138, 76, .25), transparent 55%);
+        mix-blend-mode:screen;pointer-events:none;
+      }
+      .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+      /* Section headers */
+      .section-head{
+        display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:24px;
+      }
+      .section-head h2{
+        font-size: clamp(22px, 3.2vw, 34px);line-height:1.15;margin:0;font-weight:800;
+      }
+      .subtitle{
+        display:inline-flex;align-items:center;gap:8px;
+        font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+      }
+
+      /* Cards */
+      .card{
+        background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+        padding:18px;display:flex;flex-direction:column;gap:14px;
+        box-shadow: var(--shadow);
+      }
+      .card .icon{
+        width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+        background:linear-gradient(180deg, #ff9966, var(--accent));
+        color:#fff;box-shadow:0 8px 18px rgba(255,80,0,.25)
+      }
+      .card h3{margin:0;font-size: clamp(16px, 2.5vw, 18px)}
+      .card p{margin:0;color:var(--muted)}
+
+      /* Offerings grid */
+      .offerings{grid-template-columns:repeat(auto-fit, minmax(240px,1fr))}
+      .offerings .card{transition:transform .25s ease, box-shadow .25s ease}
+      .offerings .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.08)}
+
+      /* Why choose us */
+      .why{
+        background:var(--bg);
+        border-top:1px solid var(--border);
+        border-bottom:1px solid var(--border);
+      }
+      .why .wrap{
+        display:grid;gap: clamp(20px, 4vw, 48px);
+        grid-template-columns: 1fr 1fr;align-items:center;
+      }
+      @media (max-width: 960px){ .why .wrap{grid-template-columns:1fr} }
+      .bullets{display:grid;gap:12px;margin-top:10px}
+      .bullet{
+        display:flex;gap:12px;align-items:flex-start;background:var(--bg-soft);
+        border:1px solid var(--border);padding:12px;border-radius:12px;
+      }
+      .bullet .tick{color:var(--accent)}
+      .image-placeholder{
+        border:1px dashed var(--border);border-radius:18px;aspect-ratio: 16/9;
+        display:grid;place-items:center;color:var(--muted)
+      }
+
+      /* Principles */
+      .principles{grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))}
+      .principles .card{min-height:160px}
+
+      /* Footer */
+      footer{
+        background:var(--bg);
+        border-top:1px solid var(--border);
+        color:var(--text)
+      }
+      .footgrid{grid-template-columns: repeat(3, 1fr)}
+      .foot h3{margin:0 0 8px;font-size:16px;text-transform:uppercase;letter-spacing:.08em}
+      .foot p{margin:6px 0;color:var(--muted)}
+      .foot a{color:var(--text)}
+      .foot a:hover{color:var(--accent)}
+      @media (max-width: 860px){ .footgrid{grid-template-columns:1fr;gap:24px} }
+
+      .footbar{
+        border-top:1px solid var(--border);
+        display:flex;align-items:center;justify-content:space-between;gap:12px;
+        padding:14px 0;color:var(--muted);font-size:14px;flex-wrap:wrap;
+      }
+      .footnav{display:flex;gap:14px;flex-wrap:wrap}
+      .footnav a{color:var(--muted)}
+      .footnav a:hover{color:var(--text)}
+
+      /* Utility */
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      .divider{height:1px;background:var(--border);margin:10px 0}
+      .note{font-size:14px;color:var(--muted)}
+
+      /* Back to top */
+      .to-top{
+        position:fixed;right:18px;bottom:18px;z-index:40;opacity:0;pointer-events:none;
+        transition:opacity .25s ease, transform .25s ease;transform:translateY(6px);
+      }
+      .to-top.show{opacity:1;pointer-events:auto;transform:none}
+      .to-top button{border-radius:999px;padding:12px 14px;border:0;background:var(--accent);color:#fff;box-shadow:0 10px 24px rgba(255,80,0,.35);cursor:pointer}
+
+      /* Focus states */
+      :where(a,button,summary){outline:none}
+      :where(a,button,summary):focus-visible{box-shadow:0 0 0 3px rgba(255,80,0,.35)}
+      @media (prefers-reduced-motion: reduce){
+        *{transition:none!important;animation:none!important;scroll-behavior:auto}
+      }
+    </style>
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Skip to content</a>
+
+     Topbar 
+    <div class="topbar">
+      <div class="container wrap" aria-label="Global contact bar">
+        <div><span class="muted">Help Desk:</span> <span class="tag">+91 590 088 55</span></div>
+        <div class="links">
+          <span class="muted">Mail us:</span>
+          <a href="mailto:info@patniamc.com" aria-label="Email info@patniamc.com">info@patniamc.com</a>
+        </div>
+      </div>
+    </div>
+
+     Header / Nav 
+    <header class="header" role="banner">
+      <div class="container nav">
+        <a class="brand" href="#" aria-label="Patni Asset Management Home">
+          <span class="logo" aria-hidden="true">P</span>
+          <span>Patni Asset Management</span>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#home">Home</a>
+          <a href="#about">Who We Are</a>
+
+          <details class="dropdown">
+            <summary aria-haspopup="listbox" aria-expanded="false">
+              Segments
+              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M4 6l4 4 4-4z"/></svg>
+            </summary>
+            <ul role="listbox" aria-label="Segments">
+              <li><a href="#segments">Private Equity</a></li>
+              <li><a href="#segments">Private Credit</a></li>
+            </ul>
+          </details>
+
+          <a href="#principals">Principals</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contacts</a>
+        </nav>
+
+        <a class="btn" href="#contact">Connect with us</a>
+
+        <button class="hamburger" aria-controls="mobile-menu" aria-expanded="false" title="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg>
+        </button>
+      </div>
+
+       Mobile menu 
+      <div id="mobile-menu" class="mobile-panel container" hidden>
+        <a href="#home">Home</a>
+        <a href="#about">Who We Are</a>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+        <div class="subtitle">Segments</div>
+        <a href="#segments">Private Equity</a>
+        <a href="#segments">Private Credit</a>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+        <a href="#principals">Principals</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contacts</a>
+        <div class="divider" role="separator" aria-hidden="true"></div>
+        <a class="btn" href="#contact">Connect with us</a>
+      </div>
+    </header>
+
+    <main id="main">
+       Hero 
+      <section id="home" class="hero section">
+        <div class="container wrap">
+          <div>
+            <span class="eyebrow">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="7" fill="var(--accent)"/></svg>
+              Welcome to PATNI ASSET MANAGEMENT
+            </span>
+            <h1 class="title">Your Investment Management Roadmap to Success</h1>
+            <p class="lead">Throughout your journey, you can expect ongoing guidance, mentorship, and access to valuable resources.</p>
+            <div class="cta-row">
+              <a class="btn" href="#offerings">Explore offerings</a>
+              <a class="btn secondary" href="#about">Why choose us</a>
+            </div>
+          </div>
+
+          <div class="hero-figure" role="img" aria-label="Abstract financial gradient illustration"></div>
+        </div>
+      </section>
+
+       Offerings 
+      <section id="offerings" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="subtitle">What we offer</div>
+              <h2>Expert Guidance Offerings</h2>
+            </div>
+          </div>
+          <div class="grid offerings">
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M3 13h4v8H3zm7-6h4v14h-4zM17 3h4v18h-4z"/></svg>
+              </div>
+              <h3>Investment Management</h3>
+              <p>Mutual Funds, Portfolio Management Services (PMS), Discretionary & Non‑discretionary Mandates.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M3 5h14a4 4 0 0 1 4 4v6H7a4 4 0 0 1-4-4z"/><path fill="#fff" d="M3 5l8-3l8 3v2H3z"/></svg>
+              </div>
+              <h3>Wealth Advisory</h3>
+              <p>Financial planning, asset allocation, tax‑efficient structures, and goal‑based advisory.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M4 4h16v12H4z"/><path fill="#fff" d="M2 18h20v2H2z"/></svg>
+              </div>
+              <h3>Asset Management</h3>
+              <p>Institutional mandates for corporates, trusts, pensions, and sovereign entities.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="m12 2l7 7l-7 7l-7-7z"/></svg>
+              </div>
+              <h3>Alternative Investments</h3>
+              <p>AIFs across private equity, venture capital, real estate, and hedged strategies.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M12 3l8 4v6c0 4.418-3.582 8-8 8s-8-3.582-8-8V7z"/></svg>
+              </div>
+              <h3>Responsible Investing</h3>
+              <p>Funds and portfolios aligned with Environmental, Social, and Governance (ESG) goals.</p>
+            </article>
+
+            <article class="card">
+              <div class="icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M4 4h16v10H4z"/><path fill="#fff" d="M2 16h20v4H2z"/></svg>
+              </div>
+              <h3>Digital & Tech‑Driven</h3>
+              <p>Robo‑advisory solutions, real‑time reporting dashboards, and analytics.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+       Why choose us 
+      <section id="about" class="why section">
+        <div class="container wrap">
+          <div>
+            <div class="subtitle">Why choose us</div>
+            <h2 class="title" style="font-size: clamp(24px, 4vw, 38px);">We've been assisting for over 30 years</h2>
+            <p class="lead">We combine deep market intelligence with personalized strategies, delivering consistent performance through disciplined risk management. Our transparent, client‑first approach focuses on long‑term value creation.</p>
+
+            <div class="bullets" role="list">
+              <div class="bullet" role="listitem">
+                <div class="tick" aria-hidden="true">✓</div>
+                <div>Insight‑Driven Strategies</div>
+              </div>
+              <div class="bullet" role="listitem">
+                <div class="tick" aria-hidden="true">✓</div>
+                <div>Robust Risk Management</div>
+              </div>
+              <div class="bullet" role="listitem">
+                <div class="tick" aria-hidden="true">✓</div>
+                <div>Personalized Wealth Solutions</div>
+              </div>
+              <div class="bullet" role="listitem">
+                <div class="tick" aria-hidden="true">✓</div>
+                <div>Transparent Client Focus</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-placeholder" aria-label="Advisory team illustration" role="img">
+            <span class="note">Visual placeholder</span>
+          </div>
+        </div>
+      </section>
+
+       Principles 
+      <section id="principles" class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="subtitle">Our guiding principles</div>
+              <h2>Our Core Principles, Your Financial Confidence</h2>
+            </div>
+            <a class="btn secondary" href="#contact">Know more</a>
+          </div>
+
+          <div class="grid principles">
+            <article class="card">
+              <h3>Integrity & Transparency</h3>
+              <p>Trust built through honest and clear communication.</p>
+            </article>
+            <article class="card">
+              <h3>Client‑First Approach</h3>
+              <p>Your goals shape our strategies from day one.</p>
+            </article>
+            <article class="card">
+              <h3>Disciplined Risk Management</h3>
+              <p>Protecting capital is foundational to our process.</p>
+            </article>
+            <article class="card">
+              <h3>Innovation‑Led Investing</h3>
+              <p>Adapting with evolving markets for long‑term value.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+       Lightweight anchors for original nav labels 
+      <section id="segments" class="section" aria-label="Segments overview" hidden></section>
+      <section id="principals" class="section" aria-label="Principals" hidden></section>
+      <section id="team" class="section" aria-label="Team" hidden></section>
+
+       Contact / Footer CTA 
+      <section id="contact" class="section" style="padding-bottom:32px;">
+        <div class="container">
+          <div class="card" style="align-items:center; text-align:center;">
+            <div class="subtitle">Quick connect</div>
+            <h2 style="margin:6px 0 8px; font-size: clamp(20px, 3vw, 28px);">Let's discuss your objectives</h2>
+            <p class="lead" style="max-width:720px">Reach out and our team will help tailor a plan aligned to your needs.</p>
+            <div class="cta-row" style="justify-content:center;">
+              <a class="btn" href="mailto:info@patniamc.com">Email us</a>
+              <a class="btn secondary" href="tel:+9133256478965">Call +91 33 256478965</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+     Footer 
+    <footer role="contentinfo">
+      <div class="section" style="padding-top:28px;padding-bottom:20px;">
+        <div class="container foot">
+          <div class="grid footgrid">
+            <div>
+              <h3>Our Address</h3>
+              <p>AJC Bose Road,<br/>Kolkata – 700020</p>
+            </div>
+            <div>
+              <h3>SEBI Registration</h3>
+              <p>SEBI Reg. No.: INP000000001<br/>Principal Officer: AAA DDDD</p>
+            </div>
+            <div>
+              <h3>Quick Connect</h3>
+              <p>Email: <a href="mailto:info@patniamc.com">info@patniamc.com</a><br/>
+                 Phone: <a href="tel:+9133256478965">+91 33 256478965</a></p>
+            </div>
+          </div>
+
+          <div class="divider" role="separator" aria-hidden="true"></div>
+
+          <div class="footbar">
+            <div class="footnav" aria-label="Footer navigation">
+              <a href="#offerings">Our services</a>
+              <a href="#about">About Us</a>
+              <a href="#principals">Principals</a>
+              <a href="#contact">Contact us</a>
+            </div>
+            <div class="footnav">
+              <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+            </div>
+          </div>
+
+          <div class="footbar" style="padding-top:0">
+            <div>Copyright © <span id="year">2025</span> PATNI AMC. All rights reserved.</div>
+            <div class="note">Technicals by <a href="#" rel="noopener">Expectrum Solutions</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+     Back to top 
+    <div class="to-top" id="toTop" aria-hidden="true">
+      <button title="Back to top" aria-label="Back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 8l6 6H6z"/></svg>
+      </button>
+    </div>
+
+    <script>
+      // Mobile menu toggle
+      (function(){
+        const btn = document.querySelector('.hamburger');
+        const panel = document.getElementById('mobile-menu');
+        if(!btn || !panel) return;
+        btn.addEventListener('click', () => {
+          const open = panel.hasAttribute('hidden') ? false : true;
+          if(open){
+            panel.setAttribute('hidden', '');
+            btn.setAttribute('aria-expanded', 'false');
+          }else{
+            panel.removeAttribute('hidden');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      })();
+
+      // Update footer year
+      document.getElementById('year').textContent = String(new Date().getFullYear());
+
+      // Back to top visibility + action
+      (function(){
+        const toTop = document.getElementById('toTop');
+        const button = toTop?.querySelector('button');
+        const onScroll = () => {
+          if(window.scrollY > 300){
+            toTop.classList.add('show');
+            toTop.setAttribute('aria-hidden', 'false');
+          }else{
+            toTop.classList.remove('show');
+            toTop.setAttribute('aria-hidden', 'true');
+          }
+        };
+        window.addEventListener('scroll', onScroll, {passive:true});
+        button?.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+        onScroll();
+      })();
+
+      // Close details dropdowns when clicking elsewhere
+      (function(){
+        document.addEventListener('click', (e)=>{
+          const openDetails = document.querySelectorAll('details[open]');
+          openDetails.forEach(d => {
+            if(!d.contains(e.target)) d.removeAttribute('open');
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
